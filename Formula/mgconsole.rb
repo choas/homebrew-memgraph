@@ -10,6 +10,7 @@ class Mgconsole < Formula
   end
 
   test do
-    system "#{bin}/mgconsole", "--help"
+    output = shell_output("#{bin}/mgconsole --version 2>&1")
+    assert_match "mgconsole version 1.4", output
   end
 end
